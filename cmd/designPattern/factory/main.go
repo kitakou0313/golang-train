@@ -22,6 +22,8 @@ type Creater interface {
 	createProduct() Product
 }
 
+// creatorの責務はインスタンスの生成では無くビジネスロジックの管理
+
 type CreaterA struct {
 }
 
