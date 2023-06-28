@@ -8,20 +8,20 @@ type FreightTrain struct {
 
 func (g *FreightTrain) arrive() {
 	if !g.mediator.canArrive(g) {
-		fmt.Println("Passanger Tarin: Arrival blocked, wating")
+		fmt.Println("FreightTrain: Arrival blocked, wating")
 		return
 	}
 
-	fmt.Println("Passengers Train: Arrived")
+	fmt.Println("FreightTrain: Arrived")
 
 }
 
 func (g *FreightTrain) depart() {
-	fmt.Println("PassengerTrain: Leaving")
+	fmt.Println("FreightTrain: Leaving")
 	g.mediator.notifyAboutDeparture()
 }
 
 func (g *FreightTrain) permitArrival() {
-	fmt.Println("PassengersTrain: Arraival permitted, arriving")
+	fmt.Println("FreightTrain: Arraival permitted, arriving")
 	g.arrive()
 }
