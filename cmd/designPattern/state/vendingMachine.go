@@ -38,3 +38,31 @@ func (v *VendingMachine) incrementItemCount(count int) {
 	fmt.Printf("Adding %d item\n", count)
 	v.itemCount = v.itemCount + count
 }
+
+func newVendingMachine(itemCount, itemPrice int) *VendingMachine {
+	v := &VendingMachine{
+		itemCount: itemCount,
+		itemPrice: itemPrice,
+	}
+
+	hasItemState := &HasItemState{
+		vendingMachine: v,
+	}
+	itemRequestedState := &ItemRequestedState{
+		vendingMachine: v,
+	}
+	hasMoneyState := &HasMoneyState{
+		vendingMachine: v,
+	}
+	notItemState := &NoItemState{
+		vendingMachine: v,
+	}
+
+	v.setState(hasItemState)
+	v.hasItem = hasItemState
+	v.itemRequested = itemRequestedState
+	v.hasItem = hasMoneyState
+	v.noItem = notItemState
+
+	return v
+}
