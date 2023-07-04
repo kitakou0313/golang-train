@@ -12,12 +12,12 @@ func (i *ItemRequestedState) requestItem() error {
 func (i *ItemRequestedState) addItem(count int) error {
 	return fmt.Errorf("Item dispense in progress")
 }
-func (i *ItemRequestedState) insertMoney(monry int) error {
-	if monry < i.vendingMachine.itemPrice {
+func (i *ItemRequestedState) insertMoney(money int) error {
+	if money < i.vendingMachine.itemPrice {
 		return fmt.Errorf("Inserted money is less. Please insert %d", i.vendingMachine.itemPrice)
 	}
-	fmt.Println("Monry enterd is ok")
-	i.vendingMachine.setState(i.vendingMachine.hasItem)
+	fmt.Println("money enterd is ok")
+	i.vendingMachine.setState(i.vendingMachine.hasMoney)
 	return nil
 }
 func (i *ItemRequestedState) dispenseItem() error {
