@@ -9,6 +9,8 @@ type IShirt interface {
 }
 
 // 複数のproductの生成を行うクラスのinterfaceを定義し，生成するvariation毎にfactoryサブクラスを定義する
+// Product間で共通の特徴ごとにFactoryクラスを作るイメージ
+// 例としては商品のブランドとか
 type ISportsFactory interface {
 	makeShoe() IShoe
 	makeShirt() IShirt

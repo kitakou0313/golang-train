@@ -30,7 +30,7 @@ field数が膨大であったり初期化時の手間が煩雑なクラスのイ
 頻繁に呼び出される形式をbuilderクラスでの各ステップとして定義し，
 Directorから順番を保って呼び出すことで不適切な初期化を防ぐ
 
-Q:builderのgetProduct内でbuild step呼ぶのは？
+Q:builderのgetResult内でbuild step呼ぶのは？
 A:overrideでのサブクラス実装時，呼び出し順序が変化してしまうのでNG
 Product間で共通して呼び出し順序を固定したい場合はDirectorクラスを定義するべき
 */
